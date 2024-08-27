@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, hsl(181, 23%, 43%), hsl(181, 23%, 50%));
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffff67;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.box:active {
+    transform: scale(0.9);
+}
+
+#reset-btn, #new-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    color: #ffffff;
+    border-radius: 1rem;
+    border: none;
+    transition: background 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+}
+
+#reset-btn:hover, #new-btn:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.3);
+}
+
+#msg {
+    color: #ffffc7;
+    font-size: 5vmin;
+    text-shadow: 0 0 10px rgba(255, 255, 199, 0.7);
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
